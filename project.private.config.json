@@ -9,6 +9,13 @@
           "query": "id=d4107ab1624f9d2205b8f57d4dcdc0ee",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/mine/userlist/index",
+          "query": "paper_id=d4107ab1624f9d2205b8f57d4dcdc0ee",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

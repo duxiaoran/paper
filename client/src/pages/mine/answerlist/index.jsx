@@ -31,7 +31,6 @@ export default () => {
     Taro.navigateTo({url: `/pages/mine/questionlist/index?id=${info.paperList[0]?._id}&openid=${info.userList[0]?.openid}`});
   }
 
-
   return (
     <View className={styles.answerlist}>
       <View className={styles.answerlist_control} >

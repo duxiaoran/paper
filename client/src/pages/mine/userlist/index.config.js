@@ -1,4 +1,3 @@
 export default {
-  navigationBarTitleText: '首页',
-  enableShareAppMessage: true
+  navigationBarTitleText: '我的试卷列表'
 }

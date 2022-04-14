@@ -46,7 +46,6 @@ export default () => {
     }else{
       Taro.navigateTo({url: `/pages/mine/paperDetail/index?id=${info._id}`});
     }
-    
   }
 
   const toEdit = () => {

@@ -88,7 +88,7 @@ export default () => {
     }
     try {
       Taro.showLoading({mask: true})
-      const data = {...answer, status: 2, fullScore: paperInfo.totalScore === totalScore, examTime: (new Date()).valueOf()};
+      const data = {...answer, status: 2, totalScore, fullScore: paperInfo.totalScore === totalScore, examTime: (new Date()).valueOf()};
       const answerRes = await Taro.cloud.callFunction({name: "answer",data: {action: 'set',data: data } });
       if(answerRes.errMsg !== 'cloud.callFunction:ok'){
         throw new Error(answerRes.errMsg);
