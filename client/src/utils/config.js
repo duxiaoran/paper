@@ -1,0 +1,1 @@
+export const optionArr = ['A','B', 'C', 'D', 'E', 'F', 'G', 'H']
