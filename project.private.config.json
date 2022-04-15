@@ -16,6 +16,34 @@
           "query": "paper_id=d4107ab1624f9d2205b8f57d4dcdc0ee",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/paper/question/index",
+          "query": "id=d4107ab1624f9d2205b8f57d4dcdc0ee",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/paper/question/index",
+          "query": "id=d4107ab1624f9d2205b8f57d4dcdc0ee",
+          "launchMode": "default",
+          "scene": 1007
+        },
+        {
+          "name": "",
+          "pathName": "pages/paper/question/index",
+          "query": "id=d4107ab1624f9d2205b8f57d4dcdc0ee",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/paper/question/index",
+          "query": "id=d4107ab1624f9d2205b8f57d4dcdc0ee",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -8,7 +8,6 @@ import styles from './index.module.less'
 
 export default () => {
   const dispatch = useDispatch();
-  const [loading, seLoading] = useState(false);
   const [userInfo, setUserInfo] = useState(Taro.getStorageSync('userInfo') || {});
 
   useEffect(()=>{
@@ -27,18 +26,13 @@ export default () => {
   })
 
   const getInfo = async () => {
-    const res = await Taro.getUserProfile({
-      desc: '登陆', 
-    })
-    const db = Taro.cloud.database();
-    const openid = Taro.getStorageSync('userInfo')?.openid;
-    const userInfoData = await db.collection('user').where({openid }).get();
     if(!userInfo.avatarUrl){
-      const data = {...userInfoData.data[0], ...res.userInfo} ;
+      const res = await Taro.getUserProfile({desc: '登陆' });
+      const data = {...userInfo, ...res.userInfo} ;
       await Taro.cloud.callFunction({name: "user",data: {action: 'set', data } });
       Taro.setStorageSync('userInfo', data);
+      setUserInfo(data);
     }
-    seLoading(!loading);
   }
   
   const toPaperList = () => {

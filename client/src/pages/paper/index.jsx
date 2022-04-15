@@ -2,13 +2,14 @@
 
 import {useState, useEffect} from 'react';
 import { View, Text, Button } from '@tarojs/components'
-import Taro, {useDidShow, usePullDownRefresh} from '@tarojs/taro';
+import Taro, {useDidShow, usePullDownRefresh, useReady } from '@tarojs/taro';
 import { AtTabs, AtTabsPane, AtSearchBar, AtListItem } from 'taro-ui'
 import {useSelector, useDispatch} from 'react-redux';
 import styles from './index.module.less'
 
-const userinfo = Taro.getStorageSync('userInfo');
+
 export default () => {
+  const userinfo = Taro.getStorageSync('userInfo');
   const {list} = useSelector(state => state.category);
   const [searchValue, setSearchValue] = useState('');
   const [current, setCurrent] = useState(0);
@@ -59,12 +60,11 @@ export default () => {
               <AtListItem 
                 onClick={()=> toDetail(w)} 
                 key={w._id} 
-                // disabled={w.pass?.includes(userinfo?.openid)}
                 hasBorder={false} 
                 className={styles.paperlist_item} 
                 title={w.name} 
                 arrow='right' 
-                extraText={w.pass?.includes(userinfo?.openid) && '已交卷'}
+                extraText={w.pass?.includes(userinfo?.openid) ? '已交卷' : ''}
                 note={w.desc}
               />)}
           </View>

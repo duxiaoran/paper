@@ -1,23 +1,24 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro';
-import { Provider,  } from 'react-redux'
+import { Provider } from 'react-redux'
 import 'taro-ui/dist/style/index.scss';
 
 import configStore from './store'
 
 import './app.less'
 
-
 const store = configStore();
-
 class App extends Component {
   state = {}
 
-  async componentDidMount () {
+  onLaunch(){
+    this.initFun();
+  }
+
+  initFun = async () => {
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
     }
-
     try {
       const res = await Taro.cloud.callFunction({name: "login",data: {}})
       if(res.errMsg !== 'cloud.callFunction:ok'){
@@ -36,6 +37,7 @@ class App extends Component {
         if(resu.errMsg !== 'cloud.callFunction:ok'){
           throw new Error(resu.errMsg);
         }
+        data._id = resu.result._id;
       }else{
         data = userInfo.data[0];
       }

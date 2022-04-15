@@ -5,7 +5,6 @@ import Taro, { useRouter, useDidShow, useShareAppMessage} from '@tarojs/taro';
 import {optionArr} from '../../../utils/config';
 import styles from './index.module.less'
 
-
 export default () => {
   const router = useRouter();
   const [paperInfo, setPaperInfo] = useState({});
@@ -83,7 +82,6 @@ export default () => {
           <View>得分：<Text style={{color: 'red'}}>{n.answer.toString() === answer.value[n._id].toString() ? n.score : 0}分</Text></View>
         </View>
       </View>)}
-      
     </View>
   )
 }
